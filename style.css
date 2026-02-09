@@ -1,0 +1,331 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ================= FONTS ================= */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+/* ================= COLOR VARIANTS ================= */
+:root {
+  --accent: gold;
+}
+
+body[data-variant="men"] {
+  --accent: #0f3057;
+}
+
+body[data-variant="women"] {
+  --accent: #7a1e5e;
+}
+
+body[data-variant="unisex"] {
+  --accent: gold;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.navbar img {
+  height: 50px;
+}
+
+.navbar nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: var(--accent);
+}
+
+/* ================= VARIANT SWITCH ================= */
+.variant-switch {
+  text-align: center;
+  padding: 20px;
+}
+
+.variant-switch button {
+  margin: 0 8px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #222;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.variant-switch button:hover {
+  background: var(--accent);
+  color: black;
+}
+
+/* ================= HERO ================= */
+.hero {
+  padding: 80px 10%;
+}
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* ================= CTA BUTTONS ================= */
+.cta {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-btn {
+  background: var(--accent);
+  color: black;
+}
+
+.buy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.outline-btn {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.outline-btn:hover {
+  background: var(--accent);
+  color: black;
+}
+
+/* ================= HERO MEDIA ================= */
+.hero-media video {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card span {
+  display: block;
+  margin-top: 10px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.25);
+}
+
+/* ================= CONTACT ================= */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* ================= FADE ANIMATION ================= */
+.fade {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ================= WHATSAPP FLOAT ================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  background: #25D366;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float img {
+  width: 26px;
+  height: 26px;
+  margin-left: 8px;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ================= WHATSAPP POPUP ================= */
+.whatsapp-popup {
+  position: fixed;
+  bottom: 95px;
+  right: 25px;
+  background: white;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+.whatsapp-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.whatsapp-popup::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  transform: rotate(45deg);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: black;
+  margin-top: 40px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta {
+    justify-content: center;
+  }
+
+  .navbar nav a {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    padding: 14px;
+    border-radius: 50%;
+  }
+
+  .whatsapp-text {
+    display: none;
+  }
+}
+

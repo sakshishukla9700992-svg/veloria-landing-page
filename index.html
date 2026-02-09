@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veloria – Luxury Perfume</title>
+
+  <meta name="description"
+    content="Veloria – Luxury perfume for men, women & unisex. Elegant, long-lasting fragrances.">
+  <meta name="keywords"
+    content="luxury perfume, men perfume, women perfume, unisex fragrance">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-variant="unisex">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="../image-css/design.23.png" alt="Veloria Logo">
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#notes">Notes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- VARIANT SWITCH -->
+  <div class="variant-switch">
+    <button data-variant="men">Men</button>
+    <button data-variant="women">Women</button>
+    <button data-variant="unisex">Unisex</button>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-wrapper">
+
+      <div class="hero-text">
+        <h1>A Fragrance That Speaks Before You Do</h1>
+        <p>Luxury perfume crafted for elegance and confidence</p>
+
+        <div class="cta">
+          <button class="btn buy-btn">Buy Now</button>
+          <button class="btn outline-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="../video-css/ad perfume.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about fade" id="about">
+    <h2>The Art of Fine Perfumery</h2>
+    <p>
+      Veloria blends rare ingredients with modern craftsmanship to create
+      unforgettable fragrances.
+    </p>
+  </section>
+
+  <!-- NOTES -->
+  <section class="note fade" id="notes">
+    <h2>Fragrance Notes</h2>
+    <div class="grid">
+      <div class="card">Top Notes <span>Bergamot • Citrus</span></div>
+      <div class="card">Heart Notes <span>Rose • Jasmine</span></div>
+      <div class="card">Base Notes <span>Musk • Amber • Wood</span></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials fade">
+    <h2>Customer Reviews</h2>
+    <div class="grid">
+      <div class="card">"Elegant and long-lasting." <span>— Aisha</span></div>
+      <div class="card">"Perfect luxury fragrance." <span>— Rohan</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact fade" id="contact">
+    <h2>Experience Veloria</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Message"></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- WHATSAPP -->
+  <div class="whatsapp-popup" id="waPopup">
+    Need help choosing a fragrance?
+  </div>
+
+  <a href="https://wa.me/917657890856?text=Hi%20I%20am%20interested%20in%20Veloria%20perfume"
+     class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-text">Chat with us</span>
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Veloria. All Rights Reserved.
+  </footer>
+
+    <script src="script.js"></script>
+    <script>
+        /* ================= VARIANT SWITCH ================= */
+document.querySelectorAll('.variant-switch button').forEach(button => {
+  button.addEventListener('click', () => {
+    const variant = button.getAttribute('data-variant');
+    document.body.setAttribute('data-variant', variant);
+  });
+});
+    </script>
+
+<script>
+  // Fade-in on scroll using IntersectionObserver
+const faders = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add('show');
+    observer.unobserve(entry.target); // run once
+  });
+}, {
+  threshold: 0.2
+});
+
+faders.forEach(fade => {
+  observer.observe(fade);
+});
+
+</script>
+<script>
+    /* ================= CTA BUTTONS ================= */
+const buyBtn = document.querySelector('.buy-btn');
+const cartBtn = document.querySelector('.outline-btn');
+
+if (buyBtn) {
+  buyBtn.addEventListener('click', () => {
+    alert('Redirecting to checkout 🛒');
+  });
+}
+
+if (cartBtn) {
+  cartBtn.addEventListener('click', () => {
+    alert('Added to cart ✔️');
+  });
+}
+</script>
+<script>
+    /* ================= WHATSAPP POPUP ================= */
+window.addEventListener('load', () => {
+  const popup = document.getElementById('waPopup');
+
+  if (!popup) return;
+
+  setTimeout(() => {
+    popup.classList.add('show');
+  }, 2000);
+
+  setTimeout(() => {
+    popup.classList.remove('show');
+  }, 7000);
+});
+</script>
+
+
+
+
+</body>
+
+</html>
